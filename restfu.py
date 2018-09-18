@@ -11,10 +11,19 @@ app = Flask(__name__)
 # WS CONSULTA DE TAREAS PENDIENTES
 # ------------------------------------------------
 @app.route('/wsConsultaTareas', methods=['POST'])
-def f_RegistroProveedor():
+def f_ConsultaTarea():
     lo = CTarea()
     lo.pcParam = request.get_data()
     llOk = lo.omConsultaTareas()
+    if not llOk:
+       return lo.pcError
+    return lo.pcData
+
+@app.route('/wsRegistroTareas', methods=['POST'])
+def f_RegistroTarea():
+    lo = CTarea()
+    lo.pcParam = request.get_data()
+    llOk = lo.omRegistroTarea()
     if not llOk:
        return lo.pcError
     return lo.pcData
