@@ -4,8 +4,7 @@ from CSql import *
 import json
 
 # ============================================
-# Clase que gestiona los WS de proveedores
-# 2018-06-18 FRL CREACION
+# Clase que gestiona las tareas
 # ============================================
 class CTarea(CBase):
 
@@ -16,7 +15,7 @@ class CTarea(CBase):
 
 
     # ------------------------------------------
-    # CONSULTA DE TIPO DE RUBROS
+    # CONSULTA DE TAREAS
     # ------------------------------------------
     def omConsultaTareas(self):
         self.loSql = CSql()
